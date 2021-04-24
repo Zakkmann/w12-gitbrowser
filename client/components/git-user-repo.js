@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-// import Markdown from 'react-markdown'
+import Markdown from 'markdown-to-jsx'
 
 import Head from './head'
 
@@ -33,15 +33,14 @@ const Header = () => {
 
 
 const GitUserRepo = () => {
-  const { repositoryName } = useParams()
-  const { userName } = useParams()
-  const [info, setInfo] = useState([])
+  const { userName, repositoryName } = useParams()
+  const [info, setInfo] = useState('')
 
   useEffect(() => {
     axios.get(`https://raw.githubusercontent.com/${userName}/${repositoryName}/master/README.md`).then(readme => {
       setInfo(readme.data)
     })
-  }, [])
+  }, [userName, repositoryName])
 
   return (
     <div>
@@ -59,7 +58,7 @@ const GitUserRepo = () => {
             описание кулпроги:
           </div>
           <div id="description" className="flex flex-col justify-center border rounded font-semibold mb-2 p-2">
-            {info}
+            <Markdown>{info}</Markdown>
           </div>
         </div>
       </div>
@@ -70,7 +69,3 @@ const GitUserRepo = () => {
 GitUserRepo.propTypes = {}
 
 export default GitUserRepo
-
-  // <div id="description">
-  //   <Markdown source={info} />
-  // </div>
