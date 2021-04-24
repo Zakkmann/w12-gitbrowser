@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div>
       <Head title="GitBrowser" />
-      <div className="flex-wrap object-top items-center justify-center">
+      <div className="w-screen object-top items-center justify-center">
         <div className="bg-indigo-300 text-white font-bold rounded-lg border shadow-lg p-10">
           <div id="title" className="font-sans bg-indigo-600 flex object-right justify-center border rounded mb-2 p-2">
             <img src={logo1} alt="skLogo" style={{ height: 90 }} />
@@ -31,7 +31,7 @@ const Dummy = () => {
   return (
     <div>
       <Header />
-      <Head title="Hello" />
+      <Head title="Wazzup" />
       <div className="flex items-center justify-center h-auto">
         <div className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
           <div id="title" className="text-xl flex justify-center border rounded font-semibold mb-2 p-2">
@@ -42,8 +42,8 @@ const Dummy = () => {
             <div className="text-black">
               <input id="input-field" type="text" onChange={(event) => setName(event.target.value)} value={userName} />
             </div>
-            <Link to={`/${userName}`} className="border rounded mt-3 p-2">
-              <button id="search-button" type="button" onClick={() => history.push(`/${userName}`)} className="font-semibold">
+            <Link to={`/${userName}`} className="bg-gray-100 border-2 border-gray-900 rounded mt-3 p-2">
+              <button id="search-button" type="button" onClick={() => history.push(`/${userName}`)} className="text-gray-800 font-bold">
                 Check repos!
               </button>
             </Link>

@@ -12,7 +12,7 @@ const Header = () => {
     <div>
       <Head title="GitBrowser" />
       <div className="flex-wrap object-top items-center justify-center">
-        <div className="bg-indigo-300  text-white font-bold rounded-lg border shadow-lg p-10">
+        <div className="bg-indigo-300 text-white font-bold rounded-lg border shadow-lg p-10">
           <div id="repository-name" className="font-sans bg-indigo-600 flex flex-col items-center justify-center border rounded mb-2 p-2">
             <div>кулпрога
             </div>
@@ -20,9 +20,9 @@ const Header = () => {
               {repositoryName}
             </div>
           </div>
-          <div className="font-sans bg-indigo-600 hover:text-yellow-300 flex object-right justify-center border rounded mb-2 p-2">
+          <div className="font-sans bg-indigo-600 hover:text-yellow-300 flex object-right justify-center border-indigo-300 rounded mb-2 p-2">
             <Link id="go-repository-list" to={`/${userName}`}>
-              Назад, к репчику!
+              Назад, к хабчику!
             </Link>
           </div>
         </div>

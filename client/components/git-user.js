@@ -12,7 +12,7 @@ const Header = () => {
       <div className="flex-wrap object-top items-center justify-center">
         <div className="bg-indigo-300  text-white font-bold rounded-lg border shadow-lg p-10">
           <div id="repository-name" className="font-sans bg-indigo-600 flex flex-col items-center justify-center border rounded mb-2 p-2">
-            <div> репчик великого и ужасного
+            <div> хабчик великого и ужасного
             </div>
             <div className="font-bold text-xl text-yellow-400">
               {userName}
@@ -38,8 +38,8 @@ const GitUser = () => {
     axios.get(`https://api.github.com/users/${userName}/repos`).then(usr => {
       setRepos(usr.data)
     })
-    axios.get(`https://api.github.com/users/${userName}`).then(owner => {
-      setUrl(owner.data)
+    axios.get(`https://api.github.com/users/${userName}`).then(res => res.data).then(dat => {
+      setUrl(dat.avatar_url)
     })
 
   }, [])
@@ -57,7 +57,7 @@ const GitUser = () => {
             <div className="font-bold text-lg">
             {userName}
             </div>
-            <img src={`${avaUrl.avatar_url}`} alt="avatar" className="mt-2"
+            <img key={avaUrl} src={`${avaUrl}`} alt="avatar" className="mt-2"
               style={{ 
               width: 100, 
               height: 100,
