@@ -7,6 +7,8 @@ import store, { history } from '../redux'
 
 import Home from '../components/home'
 import DummyView from '../components/dummy-view'
+import GitUser from '../components/git-user'
+import GitUserRepo from '../components/git-user-repo'
 import NotFound from '../components/404'
 
 import Startup from './startup'
@@ -49,6 +51,8 @@ const RootComponent = (props) => {
         <Startup>
           <Switch>
             <Route exact path="/" component={DummyView} />
+            <Route exact path="/:userName" component={GitUser} />
+            <Route exact path="/:userName/:repositoryName" component={GitUserRepo} />
             <Route exact path="/dashboard" component={Home} />
             <PrivateRoute exact path="/hidden-route" component={DummyView} />
             <OnlyAnonymousRoute exact path="/anonymous-route" component={DummyView} />
