@@ -65,9 +65,9 @@ const GitUser = () => {
             }}/>
           </div>
           <div id="repos" className="flex flex-col justify-center border rounded font-semibold mb-2 p-2">
-            {repos.map(rep => {
+            {repos.map((rep, index) => {
               return <Link className="hover:text-yellow-400" key={rep?.name} to={`/${userName}/${rep?.name}`}>
-                {rep?.name}
+              {`${index+1}. `} {rep?.name}
               </Link>
             })}
           </div>

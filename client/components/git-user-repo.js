@@ -20,7 +20,7 @@ const Header = () => {
               {repositoryName}
             </div>
           </div>
-          <div className="font-sans bg-indigo-600 hover:text-yellow-300 flex object-right justify-center border-indigo-300 rounded mb-2 p-2">
+          <div className="font-sans bg-indigo-600 hover:text-yellow-300 flex object-right justify-center border rounded mb-2 p-2">
             <Link id="go-repository-list" to={`/${userName}`}>
               Назад, к хабчику!
             </Link>
