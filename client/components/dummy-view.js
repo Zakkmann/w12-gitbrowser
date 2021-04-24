@@ -27,7 +27,7 @@ const Header = () => {
 }
 
 const Dummy = () => {
-  const [userName, setName] = useState("username, pls?")
+  const [userName, setName] = useState('')
   return (
     <div>
       <Header />
@@ -40,7 +40,7 @@ const Dummy = () => {
           <div className="flex flex-col items-center">
             <div>Choose your hacker:</div>
             <div className="text-black">
-              <input id="input-field" type="text" onChange={(event) => setName(event.target.value)} value={userName} />
+              <input id="input-field" type="text" onChange={(event) => setName(event.target.value)} value={userName} placeholder='username, pls?'/>
             </div>
             <Link to={`/${userName}`} className="bg-gray-100 border-2 border-gray-900 rounded mt-3 p-2">
               <button id="search-button" type="button" onClick={() => history.push(`/${userName}`)} className="text-gray-800 font-bold">
