@@ -39,7 +39,7 @@ const GitUserRepo = () => {
   useEffect(() => {
     axios.get(`https://raw.githubusercontent.com/${userName}/${repositoryName}/master/README.md`).then(readme => {
       setInfo(readme.data)
-    })
+    }).catch('Readme.md file not found')
   }, [userName, repositoryName])
 
   return (
